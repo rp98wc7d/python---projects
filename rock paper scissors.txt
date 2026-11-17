@@ -1,0 +1,28 @@
+import random
+
+choices = ["rock", "paper", "scissors"]
+
+p1 = input("P1 enter rock, paper or scissors: ").lower()
+p2 = input("P2 enter rock, paper or scissors: ").lower()
+p3 = random.choice(choices)
+
+print("P1 chose:", p1)
+print("P2 chose:", p2)
+print("P3 (Computer) chose:", p3)
+
+if p1 not in choices or p2 not in choices:
+    print("Invalid choice!")
+
+elif p1 == p2 == p3:
+    print("It's a Draw!")
+
+elif p1 == p2 or p2 == p3 or p1 == p3:
+    print("Two players have the same choice!")
+
+elif (p1 == "rock" and p2 == "scissors" and p3 == "paper") or \
+     (p1 == "paper" and p2 == "rock" and p3 == "scissors") or \
+     (p1 == "scissors" and p2 == "paper" and p3 == "rock"):
+    print("P1 wins!")
+
+else:
+    print("P2 or P3 wins!")
